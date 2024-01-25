@@ -28,18 +28,18 @@ func _process(delta):
 	if velocity.y > 0:
 		if velocity.x != 0:
 			$AnimatedSprite2D.animation = "diagonal_down"
-			#$AnimatedSprite2D.flip_v = false
+			$AnimatedSprite2D.flip_v = false
 		else:
-			$AnimatedSprite2D.animation = "up"
-			#$AnimatedSprite2D.flip_v = true
+			$AnimatedSprite2D.animation = "new_up"
+			$AnimatedSprite2D.flip_v = true
 	elif velocity.y < 0:
-		#$AnimatedSprite2D.flip_v = false
+		$AnimatedSprite2D.flip_v = false
 		if velocity.x != 0:
 			$AnimatedSprite2D.animation = "diagonal_up"
 		else:
-			$AnimatedSprite2D.animation = "up"
+			$AnimatedSprite2D.animation = "new_up"
 	else:
-		#$AnimatedSprite2D.flip_v = false
+		$AnimatedSprite2D.flip_v = false
 		if velocity.x != 0:
 			$AnimatedSprite2D.animation = "sideways"
 		else:
@@ -47,7 +47,7 @@ func _process(delta):
 	
 	if velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
-	else:
+	elif velocity.x > 0:
 		$AnimatedSprite2D.flip_h = false
 		
 	$AnimatedSprite2D.play()
