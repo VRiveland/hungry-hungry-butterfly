@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dpxbidrmvf2wg"]
+[gd_scene load_steps=14 format=3 uid="uid://dpxbidrmvf2wg"]
 
 [ext_resource type="Script" path="res://Scenes/Characters and objects/player.gd" id="1_evtd0"]
 [ext_resource type="Texture2D" uid="uid://b52rrvl23hmqh" path="res://Assets/Animations/default.png" id="2_ogwhd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dbxyfx1fsesis" path="res://Assets/Animations/diagonal up/side 1.png" id="6_ule4f"]
 [ext_resource type="Texture2D" uid="uid://ydnxcv1cji4d" path="res://Assets/Animations/diagonal up/side 2.png" id="7_awjjk"]
 [ext_resource type="Texture2D" uid="uid://l73iagkk8712" path="res://Assets/Animations/diagonal up/side 3.png" id="8_tdv6f"]
+[ext_resource type="Texture2D" uid="uid://cji44nbk0vcl8" path="res://Assets/Animations/diagonal up/new side.png" id="9_63hw3"]
 [ext_resource type="Texture2D" uid="uid://bshp47x4ekisy" path="res://Assets/Animations/diagonal up/side 4.png" id="9_me7pe"]
 [ext_resource type="Texture2D" uid="uid://cryfncin6ixq6" path="res://Assets/Animations/diagonal up/side 5.png" id="10_rpb4t"]
 
@@ -47,6 +48,9 @@ animations = [{
 "texture": ExtResource("8_tdv6f")
 }, {
 "duration": 1.0,
+"texture": ExtResource("9_63hw3")
+}, {
+"duration": 1.0,
 "texture": ExtResource("9_me7pe")
 }, {
 "duration": 1.0,
@@ -54,6 +58,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_me7pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_63hw3")
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_tdv6f")
@@ -69,14 +76,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_wgctd"]
 radius = 106.381
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="Area2D"]
 script = ExtResource("1_evtd0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.00174, 1.06329)
 sprite_frames = SubResource("SpriteFrames_iwmvk")
-animation = &"diagonal_up"
-frame_progress = 0.436397
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
