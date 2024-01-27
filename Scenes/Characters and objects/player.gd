@@ -1,12 +1,8 @@
-extends Area2D
+extends CharacterBody2D
 
 
 @export var speed = 256
-var screen_size
-
-
-func _ready():
-	screen_size = get_viewport_rect().size
+var prev_animation
 
 
 func _process(delta):
@@ -25,31 +21,36 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.animation = "default"
 	
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	elif velocity.x > 0:
+		$AnimatedSprite2D.flip_h = false
+	
 	if velocity.y > 0:
 		if velocity.x != 0:
+			prev_animation = "not_down"
 			$AnimatedSprite2D.animation = "diagonal_down"
 			$AnimatedSprite2D.flip_v = false
 		else:
 			$AnimatedSprite2D.animation = "new_up"
 			$AnimatedSprite2D.flip_v = true
+			if prev_animation != "down":
+				$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
+			prev_animation = "down"
 	elif velocity.y < 0:
+		prev_animation = "not_down"
 		$AnimatedSprite2D.flip_v = false
 		if velocity.x != 0:
 			$AnimatedSprite2D.animation = "diagonal_up"
 		else:
 			$AnimatedSprite2D.animation = "new_up"
 	else:
+		prev_animation = "not_down"
 		$AnimatedSprite2D.flip_v = false
 		if velocity.x != 0:
 			$AnimatedSprite2D.animation = "sideways"
 		else:
 			$AnimatedSprite2D.animation = "default"
-	
-	if velocity.x < 0:
-		$AnimatedSprite2D.flip_h = true
-	elif velocity.x > 0:
-		$AnimatedSprite2D.flip_h = false
 		
 	$AnimatedSprite2D.play()
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)

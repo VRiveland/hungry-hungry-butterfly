@@ -15,6 +15,11 @@ run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/scale=0.75
+
 [dotnet]
 
 project/assembly_name="Hungry Hungry Butterfly"
