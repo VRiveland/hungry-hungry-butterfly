@@ -1,20 +1,20 @@
 extends CharacterBody2D
 
 
-@export var speed = 256
+@export var speed = 384
 var prev_animation
 
 
-func _process(delta):
+func _physics_process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
+		velocity.x = 1
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
+		velocity.x = -1
 	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
+		velocity.y = 1
 	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+		velocity.y = -1
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -53,4 +53,4 @@ func _process(delta):
 			$AnimatedSprite2D.animation = "default"
 		
 	$AnimatedSprite2D.play()
-	position += velocity * delta
+	var collision = move_and_collide(velocity * delta)

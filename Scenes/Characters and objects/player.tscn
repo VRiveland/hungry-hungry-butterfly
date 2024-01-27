@@ -234,7 +234,6 @@ radius = 106.381
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_evtd0")
-speed = 384
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.00174, 1.06329)
