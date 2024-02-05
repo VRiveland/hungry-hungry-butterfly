@@ -1,46 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdlu6tn5mcm3x"]
+[gd_scene load_steps=7 format=3 uid="uid://bdlu6tn5mcm3x"]
 
-[ext_resource type="Texture2D" uid="uid://b1druryetjgk3" path="res://Assets/tiles/plain grass.png" id="1_vlq7u"]
-[ext_resource type="Texture2D" uid="uid://bm2valf1r8g0h" path="res://Assets/tiles/some grass.png" id="2_a4kkc"]
-[ext_resource type="Texture2D" uid="uid://b6yfy4srw5tqo" path="res://Assets/tiles/more grass.png" id="3_80ymi"]
-[ext_resource type="Texture2D" uid="uid://drc335ae71qj6" path="res://Assets/tiles/dense grass.png" id="4_un6k8"]
+[ext_resource type="TileSet" uid="uid://mofbtwyy7o3n" path="res://Assets/tiles/ground.tres" id="1_7tqww"]
 [ext_resource type="PackedScene" uid="uid://d3gjdd3ated67" path="res://Scenes/utility/World_boundary.tscn" id="5_fttj8"]
 [ext_resource type="PackedScene" uid="uid://c0odyx3ty6dnq" path="res://Scenes/Characters and objects/tree.tscn" id="6_w33x6"]
 [ext_resource type="PackedScene" uid="uid://dpxbidrmvf2wg" path="res://Scenes/Characters and objects/player.tscn" id="7_cfsja"]
 [ext_resource type="PackedScene" uid="uid://b0ototm16twck" path="res://Scenes/Characters and objects/flower.tscn" id="8_vftps"]
 [ext_resource type="PackedScene" uid="uid://bmwogjhkcns78" path="res://Scenes/utility/hunger_bar.tscn" id="9_uwriq"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgiwa"]
-texture = ExtResource("1_vlq7u")
-0:0/size_in_atlas = Vector2i(16, 16)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0oh5g"]
-texture = ExtResource("2_a4kkc")
-0:0/size_in_atlas = Vector2i(16, 16)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ek1c"]
-texture = ExtResource("3_80ymi")
-0:0/size_in_atlas = Vector2i(16, 16)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo5lh"]
-texture = ExtResource("4_un6k8")
-0:0/size_in_atlas = Vector2i(16, 16)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_m62eg"]
-sources/0 = SubResource("TileSetAtlasSource_fgiwa")
-sources/1 = SubResource("TileSetAtlasSource_0oh5g")
-sources/2 = SubResource("TileSetAtlasSource_0ek1c")
-sources/3 = SubResource("TileSetAtlasSource_fo5lh")
-
 [node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
-tile_set = SubResource("TileSet_m62eg")
+tile_set = ExtResource("1_7tqww")
 format = 2
 layer_0/tile_data = PackedInt32Array(458759, 3, 0, 458775, 1, 0, 1507351, 1, 0, 458791, 1, 0, 1507367, 2, 0, 1507335, 2, 0, 2555911, 2, 0, 458807, 3, 0, 1507383, 0, 0, 2555927, 0, 0, 2555943, 1, 0, 2555959, 1, 0, 458823, 1, 0, 2555975, 1, 0, 3604487, 1, 0, 3604503, 0, 0, 4653063, 0, 0, 4653079, 3, 0, 3604519, 3, 0, 1507399, 3, 0, 458839, 3, 0, 458855, 3, 0, 1507431, 3, 0, 3604567, 3, 0, 4653111, 3, 0, 3604535, 2, 0, 4653095, 1, 0, 3604551, 1, 0, 4653143, 1, 0, 2555991, 1, 0, 1507415, 0, 0, 2556007, 0, 0, 4653127, 0, 0, 3604583, 0, 0, 4653159, 1, 0, 458871, 3, 0, 4653175, 3, 0, 5701639, 3, 0, 5701655, 2, 0, 3604599, 2, 0, 1507447, 2, 0, 5701751, 0, 0, 5701671, 0, 0, 2556023, 0, 0, 5701735, 0, 0, 5701687, 1, 0, 5701719, 1, 0, 5701703, 2, 0)
 
