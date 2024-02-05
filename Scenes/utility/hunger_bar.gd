@@ -15,9 +15,10 @@ func _set_food(food_value_change):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	$HungerTimer.wait_time = 1
+	$HungerTimer.start()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_hunger_timer_timeout():
+	_set_food(-1)
+	$HungerTimer.start()
