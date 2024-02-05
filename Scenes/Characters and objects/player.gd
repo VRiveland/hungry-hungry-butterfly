@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export var speed = 384
 var prev_animation
 
-signal ate_nectar_2
 
 func _physics_process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
@@ -55,12 +54,3 @@ func _physics_process(delta):
 		
 	$AnimatedSprite2D.play()
 	var collision = move_and_collide(velocity * delta)
-
-
-func _can_eat_nectar():
-	pass
-
-
-func _on_flower_2_can_eat_nectar():
-	_can_eat_nectar()
-	ate_nectar_2.emit()

@@ -1,11 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv3vcld7acesu"]
+[gd_scene load_steps=5 format=3 uid="uid://cv3vcld7acesu"]
 
+[ext_resource type="Script" path="res://Scenes/Characters and objects/nectar.gd" id="1_0cc1a"]
 [ext_resource type="Texture2D" uid="uid://b0j7qn3v05yui" path="res://Assets/Other/nectar.png" id="1_weo24"]
+[ext_resource type="PackedScene" uid="uid://d31wh77vt5euy" path="res://Scenes/utility/interaction_area.tscn" id="2_e8qyc"]
 
-[node name="Nectar" type="Area2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7s8qe"]
+radius = 13.0
+
+[node name="Nectar" type="Node2D"]
+script = ExtResource("1_0cc1a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_weo24")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(13.8, 10.7, 11, 16, 7.2, 16, -11, 18.8, -11, 10.7, -9, -5.6, -9, -10.7, -1.9, -12.9)
+[node name="InteractionArea" parent="." instance=ExtResource("2_e8qyc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_7s8qe")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8ksfsc407ug2"]
+
+[ext_resource type="Script" path="res://Scenes/utility/interacton_manager.gd" id="1_g8u2f"]
+
+[node name="InteractonManager" type="Node2D"]
+script = ExtResource("1_g8u2f")
+
+[node name="Label" type="Label" parent="."]
+z_index = 30
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.5
+offset_right = 39.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "[E] TO EAT"
+horizontal_alignment = 1
+vertical_alignment = 1
