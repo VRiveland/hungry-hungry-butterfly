@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdlu6tn5mcm3x"]
+[gd_scene load_steps=15 format=3 uid="uid://bdlu6tn5mcm3x"]
 
 [ext_resource type="Texture2D" uid="uid://b1druryetjgk3" path="res://Assets/tiles/plain grass.png" id="1_vlq7u"]
 [ext_resource type="Texture2D" uid="uid://bm2valf1r8g0h" path="res://Assets/tiles/some grass.png" id="2_a4kkc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0odyx3ty6dnq" path="res://Scenes/Characters and objects/tree.tscn" id="6_w33x6"]
 [ext_resource type="PackedScene" uid="uid://dpxbidrmvf2wg" path="res://Scenes/Characters and objects/player.tscn" id="7_cfsja"]
 [ext_resource type="PackedScene" uid="uid://b0ototm16twck" path="res://Scenes/Characters and objects/flower.tscn" id="8_vftps"]
+[ext_resource type="PackedScene" uid="uid://bmwogjhkcns78" path="res://Scenes/utility/hunger_bar.tscn" id="9_uwriq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgiwa"]
 texture = ExtResource("1_vlq7u")
@@ -180,3 +181,16 @@ position = Vector2(930, 1273)
 
 [node name="Flower3" parent="." instance=ExtResource("8_vftps")]
 position = Vector2(1754, 790)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HungerBar" parent="CanvasLayer" instance=ExtResource("9_uwriq")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -283.0
+offset_right = 283.0
+offset_bottom = 101.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
