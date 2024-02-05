@@ -23,6 +23,6 @@ autostart = true
 visible = false
 position = Vector2(3, -2)
 
-[connection signal="timeout" from="NectarTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="NectarTimer" to="." method="_on_nectar_timer_timeout"]
+[connection signal="timeout" from="NectarTimer" to="." method="_on_timer_timeout"]
 [connection signal="nectar_eaten" from="Nectar" to="." method="_on_nectar_nectar_eaten"]
