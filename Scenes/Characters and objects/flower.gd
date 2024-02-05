@@ -2,6 +2,7 @@ extends Area2D
 
 var nectar = preload("res://Scenes/Characters and objects/nectar.tscn")
 var nectar_available = false
+@onready var hunger_bar = get_tree().get_first_node_in_group("hunger")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,5 +21,6 @@ func _on_nectar_timer_timeout():
 
 
 func _on_nectar_nectar_eaten():
+	hunger_bar._set_food(10)
 	$Nectar.visible = false
 	$NectarTimer.start()

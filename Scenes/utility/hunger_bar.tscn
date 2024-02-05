@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmwogjhkcns78"]
+[gd_scene load_steps=5 format=3 uid="uid://bmwogjhkcns78"]
 
 [ext_resource type="Texture2D" uid="uid://bna4id84ix8qf" path="res://Assets/ui/hunger meter background.png" id="1_fudx3"]
 [ext_resource type="Texture2D" uid="uid://34k4q880e8po" path="res://Assets/ui/hunger meter top.png" id="2_drtas"]
 [ext_resource type="Texture2D" uid="uid://digscym1qp1lq" path="res://Assets/ui/hunger meter.png" id="3_e55r6"]
+[ext_resource type="Script" path="res://Scenes/utility/hunger_bar.gd" id="4_p7cfu"]
 
-[node name="HungerBar" type="TextureProgressBar"]
+[node name="HungerBar" type="TextureProgressBar" groups=["hunger"]]
 offset_right = 40.0
 offset_bottom = 40.0
-value = 100.0
+value = 50.0
 texture_under = ExtResource("1_fudx3")
 texture_over = ExtResource("2_drtas")
 texture_progress = ExtResource("3_e55r6")
+script = ExtResource("4_p7cfu")
+
+[node name="HungerTimer" type="Timer" parent="."]
+autostart = true
