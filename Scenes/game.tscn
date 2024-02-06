@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdlu6tn5mcm3x"]
+[gd_scene load_steps=9 format=3 uid="uid://bdlu6tn5mcm3x"]
 
 [ext_resource type="TileSet" uid="uid://mofbtwyy7o3n" path="res://Assets/tiles/ground.tres" id="1_7tqww"]
 [ext_resource type="PackedScene" uid="uid://d3gjdd3ated67" path="res://Scenes/utility/World_boundary.tscn" id="5_fttj8"]
 [ext_resource type="PackedScene" uid="uid://c0odyx3ty6dnq" path="res://Scenes/Characters and objects/tree.tscn" id="6_w33x6"]
+[ext_resource type="PackedScene" uid="uid://chka4gopjjtq" path="res://Scenes/pause_menu.tscn" id="7_14jly"]
 [ext_resource type="PackedScene" uid="uid://dpxbidrmvf2wg" path="res://Scenes/Characters and objects/player.tscn" id="7_cfsja"]
+[ext_resource type="PackedScene" uid="uid://2juv7jxdm721" path="res://Scenes/utility/pause_manager.tscn" id="7_umbwm"]
 [ext_resource type="PackedScene" uid="uid://b0ototm16twck" path="res://Scenes/Characters and objects/flower.tscn" id="8_vftps"]
 [ext_resource type="PackedScene" uid="uid://bmwogjhkcns78" path="res://Scenes/utility/hunger_bar.tscn" id="9_uwriq"]
 
@@ -165,3 +167,12 @@ offset_bottom = 101.0
 grow_horizontal = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseManager" parent="CanvasLayer2" instance=ExtResource("7_umbwm")]
+
+[node name="PauseMenu" parent="CanvasLayer2" groups=["pause"] instance=ExtResource("7_14jly")]
+visible = false
+
+[connection signal="resume_game" from="CanvasLayer2/PauseMenu" to="CanvasLayer2/PauseManager" method="_on_pause_menu_resume_game"]

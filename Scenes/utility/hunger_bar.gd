@@ -1,7 +1,15 @@
 extends TextureProgressBar
 
 @onready var food = value : set = _set_food
+@onready var paused = false : set = _set_paused
 
+
+func _set_paused(is_paused):
+	if paused:
+		$HungerTimer.set_paused(false)
+	else:
+		$HungerTimer.set_paused(true)
+	paused = is_paused
 
 func _set_food(food_value_change):
 	var prev_food = food

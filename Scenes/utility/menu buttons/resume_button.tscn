@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbqsjts0yhsmx"]
+
+[ext_resource type="FontFile" uid="uid://dv8rag8inyld8" path="res://Assets/ButterflyKids-Regular.ttf" id="1_bfcnp"]
+[ext_resource type="Texture2D" uid="uid://cdpxxuul0onkf" path="res://Assets/ui/Plain menu button.png" id="2_jbjom"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnqtg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujmv1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8otcg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pb8fp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_284ii"]
+
+[node name="ResumeButton" type="Button"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("1_bfcnp")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fnqtg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ujmv1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8otcg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pb8fp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_284ii")
+text = "Resume"
+icon = ExtResource("2_jbjom")
+icon_alignment = 1
