@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://dle4q3tqp1mjk"]
+
+[ext_resource type="FontFile" uid="uid://dv8rag8inyld8" path="res://Assets/ButterflyKids-Regular.ttf" id="1_w2ae1"]
+[ext_resource type="Texture2D" uid="uid://cdpxxuul0onkf" path="res://Assets/ui/Plain menu button.png" id="2_2k0dl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnqtg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujmv1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8otcg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pb8fp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_284ii"]
+
+[node name="RestartButton" type="Button"]
+offset_right = 265.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("1_w2ae1")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fnqtg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ujmv1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8otcg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pb8fp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_284ii")
+text = "Restart"
+icon = ExtResource("2_2k0dl")
+icon_alignment = 1

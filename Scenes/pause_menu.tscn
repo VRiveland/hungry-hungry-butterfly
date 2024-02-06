@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://chka4gopjjtq"]
+[gd_scene load_steps=5 format=3 uid="uid://chka4gopjjtq"]
 
 [ext_resource type="PackedScene" uid="uid://cbqsjts0yhsmx" path="res://Scenes/utility/menu buttons/resume_button.tscn" id="1_1b71y"]
 [ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="1_bh0jd"]
 [ext_resource type="PackedScene" uid="uid://cd8gxqk3ekomn" path="res://Scenes/utility/menu buttons/quit_button.tscn" id="2_dc77s"]
+[ext_resource type="PackedScene" uid="uid://bow1flomg0nis" path="res://Scenes/utility/menu buttons/menu_button.tscn" id="3_m1537"]
 
 [node name="PauseMenu" type="Control"]
 z_index = 500
@@ -38,8 +39,12 @@ theme_override_constants/separation = 10
 [node name="ResumeButton" parent="VBoxContainer" instance=ExtResource("1_1b71y")]
 layout_mode = 2
 
+[node name="MenuButton" parent="VBoxContainer" instance=ExtResource("3_m1537")]
+layout_mode = 2
+
 [node name="QuitButton" parent="VBoxContainer" instance=ExtResource("2_dc77s")]
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

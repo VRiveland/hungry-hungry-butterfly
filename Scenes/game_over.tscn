@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0flinjegaiiu"]
+
+[ext_resource type="Script" path="res://Scenes/game_over.gd" id="1_0xpyf"]
+[ext_resource type="TileSet" uid="uid://mofbtwyy7o3n" path="res://Assets/tiles/ground.tres" id="2_gorj2"]
+[ext_resource type="PackedScene" uid="uid://dle4q3tqp1mjk" path="res://Scenes/utility/menu buttons/restart_button.tscn" id="3_xmraf"]
+[ext_resource type="PackedScene" uid="uid://bow1flomg0nis" path="res://Scenes/utility/menu buttons/menu_button.tscn" id="4_dae6e"]
+[ext_resource type="PackedScene" uid="uid://cd8gxqk3ekomn" path="res://Scenes/utility/menu buttons/quit_button.tscn" id="4_maxer"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xpyf")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_gorj2")
+format = 2
+layer_0/tile_data = PackedInt32Array(458759, 0, 0, 458775, 0, 0, 458791, 0, 0, 458807, 0, 0, 458823, 0, 0, 1507399, 0, 0, 1507383, 0, 0, 1507367, 0, 0, 1507351, 0, 0, 1507335, 0, 0, 2555911, 0, 0, 2555927, 0, 0, 2555943, 0, 0, 2555959, 0, 0, 2555975, 0, 0, 851983, 1, 0, 2293787, 1, 0, 786503, 1, 0, 2490429, 1, 0, 458795, 1, 0, 3604487, 0, 0, 3604503, 0, 0, 3604519, 0, 0, 3604535, 0, 0, 3604551, 0, 0, 3604567, 0, 0, 2555991, 0, 0, 1507415, 0, 0, 458839, 0, 0, 589911, 1, 0, 3276883, 1, 0, 3538981, 1, 0, 458855, 0, 0, 1507431, 1, 0, 3604583, 1, 0, 2556007, 0, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = -46.0
+offset_right = 132.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="RestartButton" parent="VBoxContainer" instance=ExtResource("3_xmraf")]
+layout_mode = 2
+
+[node name="MenuButton" parent="VBoxContainer" instance=ExtResource("4_dae6e")]
+layout_mode = 2
+
+[node name="QuitButton" parent="VBoxContainer" instance=ExtResource("4_maxer")]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,11 +1,10 @@
 extends Control
 
+@onready var game_scene = preload("res://Scenes/game.tscn")
 @onready var menu_scene = preload("res://Scenes/main_menu.tscn")
 
-signal resume_game
-
-func _on_resume_button_pressed():
-	resume_game.emit()
+func _on_restart_button_pressed():
+	get_tree().change_scene_to_packed(game_scene)
 
 
 func _on_quit_button_pressed():

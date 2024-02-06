@@ -1,5 +1,7 @@
 extends TextureProgressBar
 
+@onready var game_over_scene = preload("res://Scenes/game_over.tscn")
+
 @onready var food = value : set = _set_food
 @onready var paused = false : set = _set_paused
 
@@ -15,8 +17,7 @@ func _set_food(food_value_change):
 	var prev_food = food
 	food = min(max_value, prev_food + food_value_change)
 	if food <= 0:
-		# TODO: end the game
-		pass
+		get_tree().change_scene_to_packed(game_over_scene)
 	else:
 		value = food
 
