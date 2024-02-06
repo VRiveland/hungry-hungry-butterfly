@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://cd8gxqk3ekomn"]
+
+[ext_resource type="FontFile" uid="uid://dv8rag8inyld8" path="res://Assets/ButterflyKids-Regular.ttf" id="1_3dcep"]
+[ext_resource type="Texture2D" uid="uid://cdpxxuul0onkf" path="res://Assets/ui/Plain menu button.png" id="2_tw6hi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnqtg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujmv1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8otcg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pb8fp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_284ii"]
+
+[node name="QuitButton" type="Button"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("1_3dcep")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fnqtg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ujmv1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8otcg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pb8fp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_284ii")
+text = "Quit"
+icon = ExtResource("2_tw6hi")
+icon_alignment = 1

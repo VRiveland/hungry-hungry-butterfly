@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0fmu44v5p1p4"]
+[gd_scene load_steps=5 format=3 uid="uid://b0fmu44v5p1p4"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_00nlv"]
-[ext_resource type="PackedScene" uid="uid://c15teltg0sexi" path="res://Scenes/utility/start_button.tscn" id="2_ajfjh"]
+[ext_resource type="PackedScene" uid="uid://c15teltg0sexi" path="res://Scenes/utility/menu buttons/start_button.tscn" id="2_ajfjh"]
 [ext_resource type="TileSet" uid="uid://mofbtwyy7o3n" path="res://Assets/tiles/ground.tres" id="2_gamiw"]
+[ext_resource type="PackedScene" uid="uid://cd8gxqk3ekomn" path="res://Scenes/utility/menu buttons/quit_button.tscn" id="4_bx10p"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -31,8 +32,13 @@ offset_right = 132.5
 offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 
 [node name="StartButton" parent="VBoxContainer" instance=ExtResource("2_ajfjh")]
 layout_mode = 2
 
+[node name="QuitButton" parent="VBoxContainer" instance=ExtResource("4_bx10p")]
+layout_mode = 2
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
