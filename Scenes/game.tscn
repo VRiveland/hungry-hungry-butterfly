@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdlu6tn5mcm3x"]
+[gd_scene load_steps=10 format=3 uid="uid://bdlu6tn5mcm3x"]
 
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_2pl1b"]
 [ext_resource type="TileSet" uid="uid://mofbtwyy7o3n" path="res://Assets/tiles/ground.tres" id="1_7tqww"]
 [ext_resource type="PackedScene" uid="uid://d3gjdd3ated67" path="res://Scenes/utility/World_boundary.tscn" id="5_fttj8"]
 [ext_resource type="PackedScene" uid="uid://c0odyx3ty6dnq" path="res://Scenes/Characters and objects/tree.tscn" id="6_w33x6"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bmwogjhkcns78" path="res://Scenes/utility/hunger_bar.tscn" id="9_uwriq"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_2pl1b")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)

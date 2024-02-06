@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 InteractonManager="*res://Scenes/utility/interacton_manager.tscn"
+BackgoundMusic="*res://Scenes/utility/backgound_music.tscn"
+ScoreManager="*res://Scenes/utility/score_manager.tscn"
 
 [display]
 
