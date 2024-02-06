@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://i3o2bc1o4m6c"]
+
+[ext_resource type="TileSet" uid="uid://mofbtwyy7o3n" path="res://Assets/tiles/ground.tres" id="1_8nj4k"]
+[ext_resource type="Script" path="res://Scenes/high_scores.gd" id="1_xpgpg"]
+[ext_resource type="FontFile" uid="uid://dv8rag8inyld8" path="res://Assets/ButterflyKids-Regular.ttf" id="2_dpj0o"]
+[ext_resource type="Script" path="res://Scenes/Score.gd" id="3_np7n4"]
+[ext_resource type="PackedScene" uid="uid://buu1wvny758p4" path="res://Scenes/utility/menu buttons/back_button.tscn" id="4_ocotq"]
+
+[node name="HighScores" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xpgpg")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_8nj4k")
+format = 2
+layer_0/tile_data = PackedInt32Array(458759, 0, 0, 458775, 0, 0, 458791, 0, 0, 458807, 0, 0, 458823, 0, 0, 1507399, 0, 0, 1507383, 0, 0, 1507367, 0, 0, 1507351, 0, 0, 1507335, 0, 0, 2555911, 0, 0, 2555927, 0, 0, 2555943, 0, 0, 2555959, 0, 0, 2555975, 0, 0, 851983, 1, 0, 2293787, 1, 0, 786503, 1, 0, 2490429, 1, 0, 458795, 1, 0, 3604487, 0, 0, 3604503, 0, 0, 3604519, 0, 0, 3604535, 0, 0, 3604551, 0, 0, 3604567, 0, 0, 2555991, 0, 0, 1507415, 0, 0, 458839, 0, 0, 589911, 1, 0, 3276883, 1, 0, 3538981, 1, 0, 458855, 0, 0, 1507431, 1, 0, 3604583, 1, 0, 2556007, 0, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = -46.0
+offset_right = 132.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="HighScores" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dpj0o")
+theme_override_font_sizes/font_size = 150
+text = "High Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scores" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dpj0o")
+theme_override_font_sizes/font_size = 40
+script = ExtResource("3_np7n4")
+
+[node name="BackButton" parent="VBoxContainer" instance=ExtResource("4_ocotq")]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
