@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://mofbtwyy7o3n" path="res://Assets/tiles/ground.tres" id="1_8nj4k"]
 [ext_resource type="Script" path="res://Scenes/high_scores.gd" id="1_xpgpg"]
 [ext_resource type="FontFile" uid="uid://dv8rag8inyld8" path="res://Assets/ButterflyKids-Regular.ttf" id="2_dpj0o"]
-[ext_resource type="Script" path="res://Scenes/Score.gd" id="3_np7n4"]
+[ext_resource type="Script" path="res://Scenes/Scores.gd" id="4_ehrxf"]
 [ext_resource type="PackedScene" uid="uid://buu1wvny758p4" path="res://Scenes/utility/menu buttons/back_button.tscn" id="4_ocotq"]
 
 [node name="HighScores" type="Control"]
@@ -47,7 +47,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dpj0o")
 theme_override_font_sizes/font_size = 40
-script = ExtResource("3_np7n4")
+script = ExtResource("4_ehrxf")
 
 [node name="BackButton" parent="VBoxContainer" instance=ExtResource("4_ocotq")]
 layout_mode = 2

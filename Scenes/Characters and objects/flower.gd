@@ -30,6 +30,8 @@ func _on_nectar_timer_timeout():
 
 
 func _on_nectar_nectar_eaten():
-	hunger_bar._set_food(10)
-	$Nectar.visible = false
-	$NectarTimer.start()
+	if nectar_available:
+		hunger_bar._set_food(10)
+		nectar_available = false
+		$Nectar.visible = false
+		$NectarTimer.start()

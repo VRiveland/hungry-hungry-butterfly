@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Hungry Hungry Butterfly"
+config/version="1.0"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
@@ -25,6 +26,7 @@ ScoreManager="*res://Scenes/utility/score_manager.tscn"
 
 window/stretch/mode="canvas_items"
 window/stretch/scale=0.75
+mouse_cursor/custom_image="res://Assets/ui/pointer.png"
 
 [dotnet]
 
