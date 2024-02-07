@@ -1,10 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0fmu44v5p1p4"]
+[gd_scene load_steps=13 format=3 uid="uid://b0fmu44v5p1p4"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_00nlv"]
 [ext_resource type="PackedScene" uid="uid://c15teltg0sexi" path="res://Scenes/utility/menu buttons/start_button.tscn" id="2_ajfjh"]
 [ext_resource type="TileSet" uid="uid://mofbtwyy7o3n" path="res://Assets/tiles/ground.tres" id="2_gamiw"]
+[ext_resource type="FontFile" uid="uid://dv8rag8inyld8" path="res://Assets/ButterflyKids-Regular.ttf" id="3_01qnw"]
 [ext_resource type="PackedScene" uid="uid://cd8gxqk3ekomn" path="res://Scenes/utility/menu buttons/quit_button.tscn" id="4_bx10p"]
 [ext_resource type="PackedScene" uid="uid://cuhfsqptgy3my" path="res://Scenes/utility/menu buttons/high_scores_button.tscn" id="4_w8p1r"]
+[ext_resource type="Texture2D" uid="uid://cygaxr7t3xsov" path="res://Assets/Other/Flower.png" id="7_gr88l"]
+[ext_resource type="Texture2D" uid="uid://b52rrvl23hmqh" path="res://Assets/Animations/default.png" id="8_1tb1i"]
+[ext_resource type="Texture2D" uid="uid://ckpdnk7b3td8" path="res://Assets/Animations/idle/idle 2.png" id="9_8wr30"]
+[ext_resource type="Texture2D" uid="uid://crn1gpfh6skt1" path="res://Assets/Animations/idle/idle 3.png" id="10_ea0v0"]
+[ext_resource type="Texture2D" uid="uid://digp1uves6u72" path="res://Assets/Animations/idle/idle 4.png" id="11_s43n5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wcu68"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1tb1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8wr30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ea0v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s43n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ea0v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8wr30")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -35,6 +67,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_01qnw")
+theme_override_font_sizes/font_size = 150
+text = "Hungry Hungry Butterfly"
+
 [node name="StartButton" parent="VBoxContainer" instance=ExtResource("2_ajfjh")]
 layout_mode = 2
 
@@ -43,6 +81,27 @@ layout_mode = 2
 
 [node name="QuitButton" parent="VBoxContainer" instance=ExtResource("4_bx10p")]
 layout_mode = 2
+
+[node name="Flower" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(480.5, 473)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_gr88l")
+
+[node name="Flower2" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(723.5, 202)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_gr88l")
+
+[node name="Flower3" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(484.5, 264)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_gr88l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer"]
+position = Vector2(718.5, 306)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_wcu68")
+autoplay = "default"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HighScoresButton" to="." method="_on_high_scores_button_pressed"]

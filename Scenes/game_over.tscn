@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0flinjegaiiu"]
+[gd_scene load_steps=9 format=3 uid="uid://b0flinjegaiiu"]
 
 [ext_resource type="Script" path="res://Scenes/game_over.gd" id="1_0xpyf"]
 [ext_resource type="TileSet" uid="uid://mofbtwyy7o3n" path="res://Assets/tiles/ground.tres" id="2_gorj2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/Score.gd" id="4_0x0jj"]
 [ext_resource type="PackedScene" uid="uid://bow1flomg0nis" path="res://Scenes/utility/menu buttons/menu_button.tscn" id="4_dae6e"]
 [ext_resource type="PackedScene" uid="uid://cd8gxqk3ekomn" path="res://Scenes/utility/menu buttons/quit_button.tscn" id="4_maxer"]
+[ext_resource type="Texture2D" uid="uid://cygaxr7t3xsov" path="res://Assets/Other/Flower.png" id="8_h16nj"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -60,6 +61,21 @@ layout_mode = 2
 
 [node name="QuitButton" parent="VBoxContainer" instance=ExtResource("4_maxer")]
 layout_mode = 2
+
+[node name="Flower" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(243, 358)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_h16nj")
+
+[node name="Flower2" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(480, 522)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_h16nj")
+
+[node name="Flower3" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(239, 392)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_h16nj")
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
