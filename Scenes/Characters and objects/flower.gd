@@ -1,9 +1,10 @@
 extends Area2D
 
-var nectar = preload("res://Scenes/Characters and objects/nectar.tscn")
+@onready var nectars = get_tree().get_nodes_in_group("nectar")
+@onready var children = get_children()
 var nectar_available = false
-@onready var hunger_bar = get_tree().get_first_node_in_group("hunger")
 
+@onready var hunger_bar = get_tree().get_first_node_in_group("hunger")
 @onready var paused = false: set = _set_paused
 
 @export var min_spawn_time = 3
@@ -29,6 +30,9 @@ func _process(delta):
 func _on_nectar_timer_timeout():
 	nectar_available = true
 	$Nectar.visible = true
+	for nectar in nectars:
+		if nectar in children:
+			nectar._on_nectar_generated()
 
 
 func _on_nectar_nectar_eaten():
@@ -37,3 +41,4 @@ func _on_nectar_nectar_eaten():
 		nectar_available = false
 		$Nectar.visible = false
 		$NectarTimer.start()
+		

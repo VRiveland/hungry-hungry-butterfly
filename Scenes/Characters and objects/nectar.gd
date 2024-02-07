@@ -9,4 +9,10 @@ func _ready():
 
 func _on_eat():
 	nectar_eaten.emit()
-	
+	$InteractionArea.monitorable = false
+	$InteractionArea.monitoring = false
+
+
+func _on_nectar_generated():
+	$InteractionArea.monitorable = true
+	$InteractionArea.monitoring = true

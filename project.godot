@@ -14,6 +14,8 @@ config/name="Hungry Hungry Butterfly"
 config/version="1.0"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0.188235, 0.537255, 0.380392, 1)
+boot_splash/image="res://Logo 2.png"
 config/icon="res://Assets/meta/icon v1.png"
 
 [autoload]

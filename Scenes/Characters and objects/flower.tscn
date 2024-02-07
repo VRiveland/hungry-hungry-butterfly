@@ -19,7 +19,7 @@ shape = SubResource("CircleShape2D_lw380")
 [node name="NectarTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="Nectar" parent="." instance=ExtResource("3_jwr1u")]
+[node name="Nectar" parent="." groups=["nectar"] instance=ExtResource("3_jwr1u")]
 visible = false
 position = Vector2(3, -2)
 
