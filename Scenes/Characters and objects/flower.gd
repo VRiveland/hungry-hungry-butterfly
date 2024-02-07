@@ -6,6 +6,8 @@ var nectar_available = false
 
 @onready var paused = false: set = _set_paused
 
+@export var min_spawn_time = 3
+@export var max_spawn_time = 15
 
 func _set_paused(is_paused):
 	if paused:
@@ -16,7 +18,7 @@ func _set_paused(is_paused):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$NectarTimer.wait_time = randf_range(1, 5)
+	$NectarTimer.wait_time = randf_range(min_spawn_time, max_spawn_time)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

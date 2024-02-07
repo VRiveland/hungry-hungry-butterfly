@@ -31,5 +31,5 @@ func _ready():
 
 
 func _on_hunger_timer_timeout():
-	_set_food(-10)
+	_set_food(-3)
 	$HungerTimer.start()
