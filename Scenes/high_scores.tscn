@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://i3o2bc1o4m6c"]
+[gd_scene load_steps=6 format=3 uid="uid://i3o2bc1o4m6c"]
 
 [ext_resource type="TileSet" uid="uid://mofbtwyy7o3n" path="res://Assets/tiles/ground.tres" id="1_8nj4k"]
 [ext_resource type="Script" path="res://Scenes/high_scores.gd" id="1_xpgpg"]
 [ext_resource type="FontFile" uid="uid://dv8rag8inyld8" path="res://Assets/ButterflyKids-Regular.ttf" id="2_dpj0o"]
 [ext_resource type="Script" path="res://Scenes/Scores.gd" id="4_ehrxf"]
 [ext_resource type="PackedScene" uid="uid://buu1wvny758p4" path="res://Scenes/utility/menu buttons/back_button.tscn" id="4_ocotq"]
-[ext_resource type="Texture2D" uid="uid://cygaxr7t3xsov" path="res://Assets/Other/Flower.png" id="6_uo0pl"]
 
 [node name="HighScores" type="Control"]
 layout_mode = 3
@@ -52,10 +51,5 @@ script = ExtResource("4_ehrxf")
 
 [node name="BackButton" parent="VBoxContainer" instance=ExtResource("4_ocotq")]
 layout_mode = 2
-
-[node name="Flower" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(384.5, 324)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("6_uo0pl")
 
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
